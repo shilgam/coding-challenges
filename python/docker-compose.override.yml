@@ -1,0 +1,7 @@
+# development configuration
+version: '3.4'
+services:
+  app:
+    volumes:
+      - $PWD:/usr/src/
+      - $PWD/temp/bash_history:/root/

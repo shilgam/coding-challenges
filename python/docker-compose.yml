@@ -1,0 +1,6 @@
+# production-like setup
+version: '3.4'
+services:
+  app:
+    build: .
+    command: pytest

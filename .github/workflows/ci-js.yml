@@ -1,0 +1,11 @@
+name: Test JS code
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          cd js-challenges
+          docker compose up --build

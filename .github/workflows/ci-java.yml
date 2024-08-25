@@ -1,0 +1,28 @@
+name: Test Java code
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: "22"
+          distribution: "adopt"
+          cache: maven
+
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          cd java-challenges
+          mvn --batch-mode package -Dmaven.test.skip
+
+      - name: Test
+        run: |
+          cd java-challenges
+          mvn test

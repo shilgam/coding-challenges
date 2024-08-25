@@ -7,5 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test
         run: |
-          cd python
+          cd python-challenges
           docker compose -f docker-compose.yml run --rm app pytest

@@ -14,6 +14,8 @@ test('Data types', () => {
 
   const date = new Date("2022-03-25");
 
+  let myUndefined; // value and type are undefined
+  expect(typeof myUndefined).toBe("undefined");
 })
 
 test('operators', () => {
